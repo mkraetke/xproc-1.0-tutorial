@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="schema.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<doc xmlns:xi="http://www.w3.org/2001/XInclude"
+  schema-version="1.0">
+  <xi:include href="sect-01.xml"/>
+  <xi:include href="sect-02.xml"/>
+</doc>

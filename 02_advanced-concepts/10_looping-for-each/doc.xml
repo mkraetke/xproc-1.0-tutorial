@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc>
+  <section>
+    <para>Some text</para>
+    <image fileref="image1.png" role="graphic"/>
+    <image fileref="image2.png" role="photograph"/>  
+  </section>
+  <section>
+    <para>Some text again</para>
+    <image fileref="image3.png" role="graphic"/>  
+  </section>
+</doc>
