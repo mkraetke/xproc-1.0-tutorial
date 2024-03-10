@@ -4,8 +4,7 @@
   xmlns:xi="http://www.w3.org/2001/XInclude"
   version="1.0">
   
-  <!-- Mit <p:template/> HTTP-Request-Dokument erstellen 
-       und mit <p:http-request/> ausführen -->
+  <!-- HTTP-Request-Dokument mit <p:http-request/> ausführen -->
   
   <p:input port="source">
     <p:inline>
