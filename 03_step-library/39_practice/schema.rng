@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  
+  <start>  
+    <element name="doc">
+      <ref name="doc.atts"/>
+      <oneOrMore>
+        <ref name="section.model"/>
+      </oneOrMore>
+    </element>
+  </start>
+  
+  <define name="section.model">
+    <element name="section">
+      <zeroOrMore>
+        <choice>
+          <ref name="para.model"/>
+          <ref name="image.model"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  
+  <define name="para.model">
+    <element name="para">
+      <optional>
+        <ref name="para.atts"/>
+      </optional>
+      <text/>
+    </element>
+  </define>
+  
+  <define name="image.model">
+    <element name="image">
+      <interleave>
+        <optional>
+          <ref name="image.atts"></ref>
+        </optional>
+      </interleave>
+    </element>
+  </define>
+  
+  <define name="doc.atts">
+    <attribute name="schema-version">
+      <value>1.0</value>
+    </attribute>
+  </define>
+  
+  <define name="para.atts">
+    <attribute name="role"/>
+  </define>
+  
+  <define name="image.atts">
+    <attribute name="role"/>
+    <attribute name="fileref"/>
+  </define>
+  
+</grammar>

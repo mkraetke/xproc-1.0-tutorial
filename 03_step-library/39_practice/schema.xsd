@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  
+  <xs:element name="doc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="section"/>
+      </xs:sequence>
+      <xs:attributeGroup ref="doc.atts"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="section">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="para"/>
+        <xs:element ref="image"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="para">
+    <xs:complexType mixed="true">
+      <xs:attribute name="role"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="image">
+    <xs:complexType>
+      <xs:attribute name="role"/>
+      <xs:attribute name="fileref"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:attributeGroup name="doc.atts">
+    <xs:attribute name="schema-version" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="1.0"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  
+  <xs:attributeGroup name="para.atts">
+    <xs:attribute name="role" use="required"/>
+  </xs:attributeGroup>
+  
+  <xs:attributeGroup name="image.atts">
+    <xs:attribute name="role" use="required"/>
+    <xs:attribute name="fileref" use="required"/>
+  </xs:attributeGroup>
+  
+</xs:schema>
